@@ -32,7 +32,7 @@
                 })
         }
         function fetch() {
-            let TestClass= ncmb.DataStore("FetchTest");
+            let TestClass= ncmb.DataStore("test1");
             TestClass.fetch()
             .then(function(results){
                 let data=results.get("text");
@@ -41,7 +41,7 @@
             })
         }
         function fetchAll() {
-            let TestClass= ncmb.DataStore("FetchTest");
+            let TestClass= ncmb.DataStore("test1");
             TestClass.fetchAll()
             .then(function(results){
                 let msg="";
