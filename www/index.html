@@ -26,6 +26,8 @@
             let value3 = $("#value3").val();
             // レコードのフィールドと値を設定
             testRecord.set(key, value);
+            testRecord.set(key2, value2);
+            testRecord.set(key3, value3);
             // レコードをデータベースに登録
             testRecord.save()
                 .then(function(m) {
