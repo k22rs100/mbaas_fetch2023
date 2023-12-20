@@ -20,14 +20,17 @@
             let testRecord = new TestClass();
             let key = "subject";
             let value = $("#value").val();
-            let key2 = "week";
+            let key2 = "month";
             let value2 = $("#value2").val();
-            let key3 = "period";
+            let key3 = "date";
             let value3 = $("#value3").val();
+            let key4 = "week";
+            let value4 = $("#value4").val();
             // レコードのフィールドと値を設定
             testRecord.set(key, value);
             testRecord.set(key2, value2);
             testRecord.set(key3, value3);
+            testRecord.set(key4, value4);
             // レコードをデータベースに登録
             testRecord.save()
                 .then(function(m) {
@@ -67,10 +70,12 @@
     <div>
         <label for="value">Subject:</label>
         <input id="value" type="text" value=" ">
-        <label for="value">Week:</label>
-        <input id="value" type="text" value=" ">
-        <label for="value">Period:</label>
-        <input id="value" type="text" value=" ">
+        <label for="value2">Month:</label>
+        <input id="value2" type="text" value=" ">
+        <label for="value3">Date:</label>
+        <input id="value3" type="text" value=" ">
+        <label for="value4">Week:</label>
+        <input id="value4" type="text" value=" ">
     </div>
     <div id="button">
         <button id="btnA" class="btn" onclick="register()">Register</button>
