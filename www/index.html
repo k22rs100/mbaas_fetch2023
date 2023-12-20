@@ -53,15 +53,26 @@
             let TestClass= ncmb.DataStore("test1");
             TestClass.fetchAll()
             .then(function(results){
-                let msg="";
-                for(let i=0; i<results.length; i++){
-                    let data=results[i].get("subject");
-                    let update=results[i].get("updateDate");
-                    msg += data + ":" + update + "<br>";
-                }
-                $("#message").html(msg);
+            showResults(results);
             })
         }
+
+        function showResults(results) {
+      // テーブルのヘッダを生成
+      let msg = "<table><tr><th>Subject</th><th>Month</th><th>Date</th><th>Week</th></tr>";
+      for (let i = 0; i < results.length; i++) {
+        // 各データを収めた表の列を生成
+        msg += "<tr>";
+        msg += "<td>" + results[i].subject + "</td>";
+        msg += "<td class='num'>" + results[i].month + "</td>";
+        msg += "<td class='num'>" + results[i].date + "</td>";
+        msg += "<td class='num'>" + results[i].week + "</td>";
+        msg += "</tr>";
+      }
+      // テーブルのテイラを生成
+      msg += "</table>";
+      $("#message").html(msg);
+    }
     </script>
 </head>
 
